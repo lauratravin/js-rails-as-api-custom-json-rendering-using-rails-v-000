@@ -1,8 +1,7 @@
 class BirdsController < ApplicationController
   def index
     @birds = Bird.all
-#    render json: birds, except: [:created_at, :updated_at] alternative.
-    render json: @birds
+    render json: birds, except: [:created_at, :updated_at] # to filter
   end
   def show
    bird = Bird.find_by(id: params[:id])
